@@ -10,6 +10,6 @@ pub fn getrandom_inner(dest: &mut [u8]) -> Result<(), error::Error> {
     match host::getrandom(dest) {
         host::HCallReturnCode::Success(_) => Ok(()),
         host::HCallReturnCode::ErrorServiceUnavailable => Err(error::UNSUPPORTED),
-        _otherwise => Err(error::UNKNOWN_IO_ERROR) // Hmm?
+        _otherwise => Err(error::UNKNOWN_IO_ERROR), // Hmm?
     }
 }
