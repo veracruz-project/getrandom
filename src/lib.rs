@@ -207,6 +207,8 @@ cfg_if! {
         #[path = "wasi.rs"] mod imp;
     } else if #[cfg(all(target_arch = "x86_64", target_os = "hermit"))] {
         #[path = "rdrand.rs"] mod imp;
+    } else if #[cfg(target_os = "icecap")] {
+        #[path = "icecap.rs"] mod imp;
     } else if #[cfg(target_os = "vxworks")] {
         mod util_libc;
         #[path = "vxworks.rs"] mod imp;
