@@ -201,6 +201,8 @@ cfg_if! {
         #[path = "openbsd.rs"] mod imp;
     } else if #[cfg(target_os = "wasi")] {
         #[path = "wasi.rs"] mod imp;
+    } else if #[cfg(target_os = "icecap")] {
+        #[path = "icecap.rs"] mod imp;
     } else if #[cfg(target_os = "vxworks")] {
         mod util_libc;
         #[path = "vxworks.rs"] mod imp;
